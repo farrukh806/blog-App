@@ -1,0 +1,24 @@
+i.icon{
+    font-size: 3em;
+}
+
+.ui.text.container{
+    margin-top: 4.0em;
+} 
+.ui.fixed.menu{
+    height: 56px;
+}
+#delete{
+    display: inline;
+}
+#date{
+    font-weight: bold;
+    margin-bottom: 13px;
+}
+
+p:last-child{
+    margin-bottom: 16px;
+}
+.description{
+    margin-top: 13px;
+}
