@@ -205,6 +205,6 @@ function isLoggedin(req, res, next) {
         res.render('login');
     }
 }
-app.listen(3000, function () {
+app.listen(process.env.port, function () {
     console.log('Server started at port 3000');
 });
