@@ -1,46 +1,19 @@
 <%- include ('partials/header') -%>
 
-<!-- 
-<div class="ui segment container">
-    <div class="ui huge header">RESTful Blog App</div>
-
-    <div class="ui segment top attached segment">
-        <div class="ui divided items">
-            <div class="item">
-                <div class="image">
-
-                </div>
-                <div class="content">
-                    
-                </div>
-
-                <div class="meta">
-
-                </div>
-                <div class="description">
-                    <p>
-                <div class="extra">
-                    <a class="ui floated basic violet button" href="/blogs/
-                        more</a>
-                </div>
-
-            </div>
-
-
-        </div>
-    </div>
-</div>
- -->
-
 <div class="ui main text huge header container">
     <div class="ui header huge">RESTful Blog App</div>
 </div>
+<% if(success && success.length > 0){  %> 
+    <div class="alert alert-success" role="alert">
+        <%= success %> 
+    </div>
+<% } %>
 <div class="ui main text attached container segment">
     <% data.forEach(function(blog){ %>
     <div class="ui divided items">
         <div class="item">
             <div class="image">
-                <img src="<%= blog.image %> " alt="blog image">
+                <img src="<%= blog.image %> " alt="<% blog.title %> ">
             </div>
             <div class="content">
                 <a class="header" href="/blogs/<%= blog._id %>"><%= blog.title %></a>

@@ -1,0 +1,23 @@
+<%- include('partials/header') %>
+
+<div class="ui main text container segment">
+    <% if(error && error.length > 0){ %>
+        <div class="alert alert-danger" role="alert">
+            <%= error %> 
+        </div>
+    <% } %>
+    <div class="ui huge header">Signup</div>
+    <form class="ui form" action="/signup" method="POST">
+        <div class="field">
+            <label>Username</label>
+            <input type="text" name="username" placeholder="Username" autocomplete="off">
+        </div>
+        <div class="field">
+            <label>Password</label>
+            <input type="password" name="password" placeholder="Password" autocomplete="off">
+        </div>
+        <input class="ui violet basic button" type="submit">
+    </form>
+</div>
+
+<%- include('partials/footer') %>
