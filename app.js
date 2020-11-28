@@ -1,4 +1,5 @@
-var bodyParser = require('body-parser'),
+var port = process.env.PORT || 8080,
+    bodyParser = require('body-parser'),
     express = require('express'),
     expressSanitizer = require('express-sanitizer'),
     mongoose = require('mongoose'),
@@ -205,6 +206,6 @@ function isLoggedin(req, res, next) {
         res.render('login');
     }
 }
-app.listen(process.env.port, function () {
+app.listen(port, function () {
     console.log('Server started at port 3000');
 });
