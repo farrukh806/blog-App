@@ -153,7 +153,7 @@ app.delete('/blogs/:id', isLoggedin, function (req, res) {
 });
 
 //User singup
-app.get('/signup', isLoggedin, function(req, res){
+app.get('/signup', function(req, res){
     res.render('signup');
 });
 
