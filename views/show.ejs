@@ -10,7 +10,7 @@
             </div>
             <div class="description">
                 <p><%- blog.body -%> </p>
-                <h3 class="float right"><%- blog.author.toUpperCase() -%> </h3>
+                <h3 class="item float right"><%- blog.author.toUpperCase() -%> </h3>
             </div>
             <% if(currentUser.username=== blog.author){ %> 
                 <a class="ui blue basic button" href="/blogs/<%= blog._id %>/edit">Edit</a>
