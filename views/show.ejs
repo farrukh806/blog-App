@@ -10,7 +10,8 @@
             </div>
             <div class="description">
                 <p><%- blog.body -%> </p>
-                <% var author =  blog.author.charAt(0).toUpperCase + blog.author.slice(1); %>
+                <% var author =  blog.author.charAt(0).toUpperCase; %>
+                <% author = author + blog.author.slice(1); %>
                  <h3><%- author -%></h3>
             </div>
             <% if(currentUser.username=== blog.author){ %> 
