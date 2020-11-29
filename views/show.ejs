@@ -10,7 +10,8 @@
             </div>
             <div class="description">
                 <p><%- blog.body -%> </p>
-                <h3 class="item float right"><%- blog.author.toUpperCase() -%> </h3>
+                <% var author =  blog.author.charAt(0).toUpperCase + blog.author[1:] %>
+                 <h3><%- author -%></h3>
             </div>
             <% if(currentUser.username=== blog.author){ %> 
                 <a class="ui blue basic button" href="/blogs/<%= blog._id %>/edit">Edit</a>
