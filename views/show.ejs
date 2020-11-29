@@ -10,7 +10,7 @@
             </div>
             <div class="description">
                 <p><%- blog.body -%></p>
-                 <h3 class="item float right">Submitted by-<strong><%- blog.author -%></strong></h3>
+                 <h3 class="item float right">Submitted by <i><%- blog.author -%></i></h3>
             </div>
             <% if(currentUser.username=== blog.author){ %> 
                 <a class="ui blue basic button" href="/blogs/<%= blog._id %>/edit">Edit</a>
