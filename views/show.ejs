@@ -9,10 +9,8 @@
                 <span id="date"><%= blog.created.toDateString() %></span>
             </div>
             <div class="description">
-                <p><%- blog.body -%> </p>
-                <% var author =  blog.author.charAt(0).toUpperCase; %>
-                <% author = author + blog.author.slice(1); %>
-                 <h3><%- author -%></h3>
+                <p><%- blog.body -%></p>
+                 <h3 class="item float right"><%- author -%></h3>
             </div>
             <% if(currentUser.username=== blog.author){ %> 
                 <a class="ui blue basic button" href="/blogs/<%= blog._id %>/edit">Edit</a>
