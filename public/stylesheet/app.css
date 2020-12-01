@@ -35,6 +35,9 @@ p:last-child{
 @media screen and (max-width:346px){
     .ui.attached.inverted.menu{
         font-size: 12px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
     }
     .ui.attached.inverted.menu a{
         width:15%;
@@ -46,4 +49,5 @@ p:last-child{
         height:10px;
         justify-content: center;
     }
+   
 }
