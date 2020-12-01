@@ -154,6 +154,7 @@ app.delete('/blogs/:id', isLoggedin, function (req, res) {
 
 //User singup
 app.get('/signup', function(req, res){
+    if(req.user.username) res.redirect('/');
     res.render('signup');
 });
 
