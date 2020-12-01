@@ -16,10 +16,14 @@
 
     <div class="ui fixed attached container segment inverted menu ">
         <div class="header item"><i class="pencil alternate icon"></i></i> Blog Site</div>
-        <a class="item" href="/">Home</a>
-        <a class="item" href="/blogs/new">New Post</a>
-        <a class="item" href="/signup">Sign up</a>
-        <a class="item" href="/login">Login</a>
+        <% if(currentUser){ %>
+            <a class="item" href="/">Home</a>
+            <a class="item" href="/blogs/new">New Post</a>
+        <% } %>
+         <% if(!currentUser){ %> 
+            <a class="item" href="/signup">Sign up</a>
+            <a class="item" href="/login">Login</a>
+        <% } %>
         <% if(currentUser){ %> 
             <a class="item float right" href="/logout">Logout</a>
         <% } %> 
