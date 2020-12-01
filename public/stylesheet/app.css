@@ -43,6 +43,8 @@ p:last-child{
         width: 19%;
         margin-right: 10px;
         padding-right: 15px;
+        font-size:14px;
+        
     }
     .ui.attached.inverted.menu .header .item{
         margin-right:0;
