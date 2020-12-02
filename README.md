@@ -5,5 +5,5 @@ And after that the same user can also modify/delete his blog fromt the app.
 
 A live version of the above project is hosted on the heroku you can access that using the given link below
 :---------------
-<a href="#">jkjkjkds</a>
-blogapp28.herokuapp.com
+<a href="https://blogapp28.herokuapp.com">Live preview</a>
+
