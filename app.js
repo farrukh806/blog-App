@@ -230,7 +230,7 @@ function checkUserOwenership(req, res, next) {
     else {
         res.redirect('back');
     }
-}}
+}
 app.listen(port, function () {
     console.log('Server started at port 3000');
 });
