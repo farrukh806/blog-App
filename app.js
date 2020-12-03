@@ -115,7 +115,7 @@ app.get('/blogs/:id', isLoggedin, function (req, res) {
 });
 
 //Edit Route
-app.get('/blogs/:id/edit', isLoggedin, function (req, res) {
+app.get('/blogs/:id/edit', checkUserOwnership, function (req, res) {
     Blog.findById(req.params.id, function (err, foundBlog) {
         if (err) {
             res.redirect('/blogs');
@@ -127,7 +127,7 @@ app.get('/blogs/:id/edit', isLoggedin, function (req, res) {
 });
 
 //Update route
-app.put('/blogs/:id', isLoggedin, function (req, res) {
+app.put('/blogs/:id', checkUserOwnership, function (req, res) {
     req.body.blog.body = req.sanitize(req.body.blog.body);
     Blog.findByIdAndUpdate(req.params.id, req.body.blog, function (err, success) {
         if (err) {
@@ -141,7 +141,7 @@ app.put('/blogs/:id', isLoggedin, function (req, res) {
 });
 
 //Delete route
-app.delete('/blogs/:id', isLoggedin, function (req, res) {
+app.delete('/blogs/:id', checkUserOwnership, function (req, res) {
     Blog.findByIdAndDelete(req.params.id, function (err) {
         if (err) {
             res.redirect('/blogs');
@@ -206,6 +206,31 @@ function isLoggedin(req, res, next) {
         res.render('login');
     }
 }
+
+function checkUserOwenership(req, res, next) {
+    if (req.isAuthenticated()) {
+        Blog.findById(req.params.id, function (err, blog) {
+            if (err) {
+                console.log(err);
+                req.flash("error", "Blog not found!");
+                res.redirect('back');
+            }
+            else {
+                console.log(blog);
+                if (blog.author === req.user.username)
+                    next();
+                else {
+                    req.flash("error", "Some error occured!");
+                    res.redirect('back');
+                }
+
+            }
+        });
+    }
+    else {
+        res.redirect('back');
+    }
+}}
 app.listen(port, function () {
     console.log('Server started at port 3000');
 });
