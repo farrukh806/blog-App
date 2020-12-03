@@ -207,7 +207,7 @@ function isLoggedin(req, res, next) {
     }
 }
 
-function checkUserOwenership(req, res, next) {
+function checkUserOwnership(req, res, next) {
     if (req.isAuthenticated()) {
         Blog.findById(req.params.id, function (err, blog) {
             if (err) {
